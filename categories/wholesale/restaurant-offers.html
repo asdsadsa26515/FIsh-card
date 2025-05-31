@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Пропозиції для ресторанів - Рибна карта</title>
+  <link rel="icon" href="../../images/icon.png" type="image/png">
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <!-- Top header -->
+      <div class="top-header">
+        <div class="logo-container">
+          <a href="../../index.html" class="logo">
+            <div class="logo-icon">
+              <i class="fas fa-fish"></i>
+            </div>
+            <span class="logo-text">Рибна карта</span>
+          </a>
+          
+          <nav class="desktop-nav">
+            <ul class="menu-list">
+              <li><a href="../../about.html">Про нас</a></li>
+              <li class="dropdown">
+                <a href="../../products.html" class="dropdown-toggle active">Продукти <i class="fas fa-chevron-down"></i></a>
+                <div class="dropdown-menu">
+                  <a href="../../products.html">Каталог продукції</a>
+                  <a href="../../popular.html">Популярні товари</a>
+                  <a href="wholesale.html">Оптова торгівля</a>
+                </div>
+              </li>
+              <li><a href="../../news.html">Новини / Блог</a></li>
+              <li><a href="../../contacts.html">Контакти</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <!-- Search bar -->
+        <div class="search-container">
+          <input type="text" placeholder="Пошук товарів..." class="search-input">
+          <button class="search-button">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+
+        <!-- Right side icons -->
+        <div class="header-icons">
+          <a href="#" class="cart-button">
+            <i class="fas fa-shopping-cart"></i>
+          </a>
+          <button class="mobile-menu-toggle">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Main navigation -->
+      <nav class="main-nav">
+        <div class="category-dropdown">
+          <button class="dropdown-toggle">
+            Каталог продукції <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="dropdown-menu">
+            <a href="fresh-fish.html"><i class="fas fa-fish"></i> Свіжа риба</a>
+            <a href="seafood.html"><i class="fas fa-ship"></i> Морепродукти</a>
+            <a href="smoked-canned.html"><i class="fas fa-box"></i> Копченості та консерви</a>
+            <a href="frozen-fish.html"><i class="fas fa-snowflake"></i> Заморожена риба</a>
+            <a href="delicacies.html"><i class="fas fa-wine-glass"></i> Делікатеси</a>
+            <a href="wholesale.html"><i class="fas fa-users"></i> Оптова торгівля</a>
+          </div>
+        </div>
+        <a href="../../popular.html">Популярні товари</a>
+        <a href="../wholesale.html">Оптова торгівля</a>
+        <a href="../../about.html">Коротко про компанію "Рибна карта"</a>
+      </nav>
+      
+      <!-- Mobile menu -->
+      <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-search">
+          <input type="text" placeholder="Пошук товарів..." class="search-input">
+        </div>
+        <div class="mobile-menu-items">
+          <p class="menu-category">Корпоративний сайт:</p>
+          <a href="../../about.html"><i class="fas fa-user"></i> Про нас</a>
+          <div class="mobile-dropdown">
+            <a href="#" class="mobile-dropdown-toggle"><i class="fas fa-box"></i> Продукти <i class="fas fa-chevron-down"></i></a>
+            <div class="mobile-dropdown-content">
+              <a href="../../products.html"><i class="fas fa-fish"></i> Каталог продукції</a>
+              <a href="../../popular.html"><i class="fas fa-star"></i> Популярні товари</a>
+              <a href="../wholesale.html"><i class="fas fa-users"></i> Оптова торгівля</a>
+            </div>
+          </div>
+          <a href="../../news.html"><i class="fas fa-newspaper"></i> Новини / Блог</a>
+          <a href="../../contacts.html"><i class="fas fa-phone"></i> Контакти</a>
+          
+          <p class="menu-category">Категорії:</p>
+          <a href="fresh-fish.html"><i class="fas fa-fish"></i> Свіжа риба</a>
+          <a href="seafood.html"><i class="fas fa-ship"></i> Морепродукти</a>
+          <a href="smoked-canned.html"><i class="fas fa-box"></i> Копченості та консерви</a>
+          <a href="frozen-fish.html"><i class="fas fa-snowflake"></i> Заморожена риба</a>
+          <a href="delicacies.html"><i class="fas fa-wine-glass"></i> Делікатеси</a>
+          <a href="../wholesale.html" class="active"><i class="fas fa-users"></i> Оптова торгівля</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container page-content">
+      <div class="breadcrumbs">
+        <a href="../../index.html">Головна</a>
+        <i class="fas fa-chevron-right"></i>
+        <a href="../../products.html">Продукти</a>
+        <i class="fas fa-chevron-right"></i>
+        <a href="../wholesale.html">Оптова торгівля</a>
+        <i class="fas fa-chevron-right"></i>
+        <span>Пропозиції для ресторанів</span>
+      </div>
+
+      <h1 class="page-title">Пропозиції для ресторанів</h1>
+
+      <section class="product-section">
+        <div class="section-header">
+          <div class="icon-circle">
+            <i class="fas fa-utensils"></i>
+          </div>
+          <h2 class="section-title">Спеціальна програма для закладів харчування</h2>
+        </div>
+        
+        <div class="info-card">
+          <p>Ми пропонуємо особливі умови для ресторанів, кафе та інших закладів харчування. Наша компанія забезпечує:</p>
+          
+          <ul class="features-list">
+            <li><i class="fas fa-check"></i> Стабільні поставки свіжої риби та морепродуктів</li>
+            <li><i class="fas fa-check"></i> Індивідуальний графік доставки, враховуючи потреби вашого закладу</li>
+            <li><i class="fas fa-check"></i> Спеціальні ціни для постійних партнерів</li>
+            <li><i class="fas fa-check"></i> Широкий асортимент продукції найвищої якості</li>
+            <li><i class="fas fa-check"></i> Консультації наших фахівців щодо вибору та зберігання продукції</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="product-section">
+        <div class="section-header">
+          <div class="icon-circle">
+            <i class="fas fa-handshake"></i>
+          </div>
+          <h2 class="section-title">Переваги співпраці</h2>
+        </div>
+        
+        <div class="category-grid">
+          <div class="category-card">
+            <div class="category-image">
+              <img src="https://images.unsplash.com/photo-1510130387422-82bed34b37e9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Свіжість та якість">
+            </div>
+            <div class="category-info">
+              <div class="category-icon">
+                <i class="fas fa-award"></i>
+              </div>
+              <h3>Свіжість та якість</h3>
+              <p>Гарантуємо поставки свіжої продукції найвищої якості.</p>
+            </div>
+          </div>
+
+          <div class="category-card">
+            <div class="category-image">
+              <img src="https://images.unsplash.com/photo-1580913428735-bd3c269d6a82?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Вигідні умови">
+            </div>
+            <div class="category-info">
+              <div class="category-icon">
+                <i class="fas fa-percent"></i>
+              </div>
+              <h3>Вигідні умови</h3>
+              <p>Спеціальні ціни та умови для постійних партнерів.</p>
+            </div>
+          </div>
+
+          <div class="category-card">
+            <div class="category-image">
+              <img src="../../images/delivery.jpeg" alt="Швидка доставка">
+            </div>
+            <div class="category-info">
+              <div class="category-icon">
+                <i class="fas fa-truck"></i>
+              </div>
+              <h3>Швидка доставка</h3>
+              <p>Оперативна доставка за вашим індивідуальним графіком.</p>
+            </div>
+          </div>
+
+          <div class="category-card">
+            <div class="category-image">
+              <img src="https://images.unsplash.com/photo-1484980972926-edee96e0960d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Широкий асортимент">
+            </div>
+            <div class="category-info">
+              <div class="category-icon">
+                <i class="fas fa-fish"></i>
+              </div>
+              <h3>Широкий асортимент</h3>
+              <p>Величезний вибір риби та морепродуктів для вашого меню.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="product-section">
+        <div class="section-header">
+          <div class="icon-circle">
+            <i class="fas fa-phone"></i>
+          </div>
+          <h2 class="section-title">Зацікавлені в співпраці?</h2>
+        </div>
+        
+        <div class="info-card">
+          <p>Залиште свої контактні дані, і наш менеджер зв'яжеться з вами для обговорення деталей співпраці.</p>
+          <a href="../../contacts.html" class="button">Зв'язатися з нами</a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-column">
+          <h3 class="footer-title">Рибна карта</h3>
+          <p class="footer-text">
+            Найкращі рибні продукти та морепродукти від перевірених постачальників.
+          </p>
+        </div>
+        
+        <div class="footer-column">
+          <h3 class="footer-title">Інформація</h3>
+          <ul class="footer-links">
+            <li><a href="../../about.html">Про компанію</a></li>
+            <li><a href="../../payment-delivery.html">Доставка і оплата</a></li>
+            <li><a href="wholesale.html">Оптова торгівля</a></li>
+            <li><a href="../../contacts.html">Контакти</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h3 class="footer-title">Категорії</h3>
+          <ul class="footer-links">
+            <li><a href="../fresh-fish.html">Свіжа риба</a></li>
+            <li><a href="../seafood.html">Морепродукти</a></li>
+            <li><a href="../smoked-canned.html">Рибні консерви</a></li>
+            <li><a href="../frozen-fish.html">В'ялена та сушена риба</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h3 class="footer-title">Контакти</h3>
+          <ul class="footer-contacts">
+            <li>Телефон: +380 44 123 4567</li>
+            <li>Email: info@rybna-karta.ua</li>
+            <li>Адреса: м. Київ, вул. Рибна, 42</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>© 2025 Рибна карта. Всі права захищено.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelector('.mobile-menu-toggle').addEventListener('click', function() {
+      document.getElementById('mobileMenu').classList.toggle('active');
+    });
+
+    const mobileDropdownToggles = document.querySelectorAll('.mobile-dropdown-toggle');
+    mobileDropdownToggles.forEach(toggle => {
+      toggle.addEventListener('click', function(e) {
+        e.preventDefault();
+        this.nextElementSibling.classList.toggle('active');
+      });
+    });
+
+    const dropdowns = document.querySelectorAll('.dropdown');
+    dropdowns.forEach(dropdown => {
+      dropdown.addEventListener('mouseenter', function() {
+        this.querySelector('.dropdown-menu').classList.add('show');
+      });
+      dropdown.addEventListener('mouseleave', function() {
+        this.querySelector('.dropdown-menu').classList.remove('show');
+      });
+    });
+
+    const categoryDropdown = document.querySelector('.category-dropdown');
+    categoryDropdown.addEventListener('mouseenter', function() {
+      this.querySelector('.dropdown-menu').classList.add('show');
+    });
+    categoryDropdown.addEventListener('mouseleave', function() {
+      this.querySelector('.dropdown-menu').classList.remove('show');
+    });
+  </script>
+</body>
+</html>
