@@ -1,0 +1,241 @@
+
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Копчена скумбрія - Рибний маркет</title>
+    <link rel="icon" href="../../images/icon.png" type="image/png">
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <!-- Top header -->
+      <div class="top-header">
+        <div class="logo-container">
+          <a href="../../index.html" class="logo">
+            <div class="logo-icon">
+              <i class="fas fa-fish"></i>
+            </div>
+            <span class="logo-text">Рибна карта</span>
+          </a>
+          
+          <nav class="desktop-nav">
+            <ul class="menu-list">
+              <li><a href="../../about.html">Про нас</a></li>
+              <li class="dropdown">
+                <a href="../../products.html" class="dropdown-toggle active">Продукти <i class="fas fa-chevron-down"></i></a>
+                <div class="dropdown-menu">
+                  <a href="../../products.html">Каталог продукції</a>
+                  <a href="../../popular.html">Популярні товари</a>
+                  <a href="../../categories/wholesale.html">Оптова торгівля</a>
+                </div>
+              </li>
+              <li><a href="../../news.html">Новини / Блог</a></li>
+              <li><a href="../../contacts.html">Контакти</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <!-- Search bar -->
+        <div class="search-container">
+          <input type="text" placeholder="Пошук товарів..." class="search-input">
+          <button class="search-button">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+
+        <!-- Right side icons -->
+        <div class="header-icons">
+          <a href="#" class="cart-button">
+            <i class="fas fa-shopping-cart"></i>
+          </a>
+          <button class="mobile-menu-toggle">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Main navigation -->
+      <nav class="main-nav">
+        <div class="category-dropdown">
+          <button class="dropdown-toggle">
+            Каталог продукції <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="dropdown-menu">
+            <a href="../../categories/fresh-fish.html"><i class="fas fa-fish"></i> Свіжа риба</a>
+            <a href="../../categories/seafood.html"><i class="fas fa-ship"></i> Морепродукти</a>
+            <a href="../../categories/smoked-canned.html" class="active"><i class="fas fa-box"></i> Копченості та консерви</a>
+            <a href="../../categories/frozen-fish.html"><i class="fas fa-snowflake"></i> Заморожена риба</a>
+            <a href="../../categories/delicacies.html"><i class="fas fa-wine-glass"></i> Делікатеси</a>
+            <a href="../../categories/wholesale.html"><i class="fas fa-users"></i> Оптова торгівля</a>
+          </div>
+        </div>
+        <a href="../../popular.html">Популярні товари</a>
+        <a href="../../categories/wholesale.html">Оптова торгівля</a>
+        <a href="../../about.html">Коротко про компанію "Рибна карта"</a>
+      </nav>
+      
+      <!-- Mobile menu -->
+      <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-search">
+          <input type="text" placeholder="Пошук товарів..." class="search-input">
+        </div>
+        <div class="mobile-menu-items">
+          <p class="menu-category">Корпоративний сайт:</p>
+          <a href="../../about.html"><i class="fas fa-user"></i> Про нас</a>
+          <div class="mobile-dropdown">
+            <a href="#" class="mobile-dropdown-toggle"><i class="fas fa-box"></i> Продукти <i class="fas fa-chevron-down"></i></a>
+            <div class="mobile-dropdown-content">
+              <a href="../../products.html"><i class="fas fa-fish"></i> Каталог продукції</a>
+              <a href="../../popular.html"><i class="fas fa-star"></i> Популярні товари</a>
+              <a href="../../categories/wholesale.html"><i class="fas fa-users"></i> Оптова торгівля</a>
+            </div>
+          </div>
+          <a href="../../news.html"><i class="fas fa-newspaper"></i> Новини / Блог</a>
+          <a href="../../contacts.html"><i class="fas fa-phone"></i> Контакти</a>
+          
+          <p class="menu-category">Категорії:</p>
+          <a href="../../categories/fresh-fish.html"><i class="fas fa-fish"></i> Свіжа риба</a>
+          <a href="../../categories/seafood.html"><i class="fas fa-ship"></i> Морепродукти</a>
+          <a href="../../categories/smoked-canned.html" class="active"><i class="fas fa-box"></i> Копченості та консерви</a>
+          <a href="../../categories/frozen-fish.html"><i class="fas fa-snowflake"></i> Заморожена риба</a>
+          <a href="../../categories/delicacies.html"><i class="fas fa-wine-glass"></i> Делікатеси</a>
+          <a href="../../categories/wholesale.html"><i class="fas fa-users"></i> Оптова торгівля</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container page-content">
+      <div class="breadcrumbs">
+        <a href="../../index.html">Головна</a>
+        <i class="fas fa-chevron-right"></i>
+        <a href="../../categories/smoked-canned.html">Копченості та консерви</a>
+        <i class="fas fa-chevron-right"></i>
+        <span>Копчена скумбрія</span>
+      </div>
+
+      <div class="product-details">
+        <div class="product-image-large">
+          <img src="../../images/mackerel.jpeg" alt="Копчена скумбрія">
+        </div>
+        <div class="product-info-details">
+          <h1 class="product-title-large">Копчена скумбрія</h1>
+          
+          <div class="product-pricing">
+            <div class="discount-price">
+              <span class="current-price">199 ₴</span>
+            </div>
+          </div>
+          
+          <div class="product-description">
+            <p>Традиційно копчена скумбрія з ніжним ароматом та неповторним смаком. Приготована за старовинними рецептами з використанням натуральної деревини для копчення. Багата на омега-3 жирні кислоти та вітамін D. Готова до вживання.</p>
+            
+            <div class="product-specs">
+              <div class="spec-item">
+                <span class="spec-label">Вага:</span>
+                <span class="spec-value">300 г</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Походження:</span>
+                <span class="spec-value">Україна</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Наявність:</span>
+                <span class="spec-value in-stock">В наявності</span>
+              </div>
+            </div>
+          </div>
+          
+          <button class="button product-buy-button">
+            <i class="fas fa-shopping-cart"></i>
+            Додати до кошика
+          </button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-column">
+          <h3 class="footer-title">Рибна карта</h3>
+          <p class="footer-text">
+            Найкращі рибні продукти та морепродукти від перевірених постачальників.
+          </p>
+        </div>
+        
+        <div class="footer-column">
+          <h3 class="footer-title">Інформація</h3>
+          <ul class="footer-links">
+            <li><a href="../../about.html">Про компанію</a></li>
+            <li><a href="../../payment-delivery.html">Доставка і оплата</a></li>
+            <li><a href="../../categories/wholesale.html">Оптова торгівля</a></li>
+            <li><a href="../../contacts.html">Контакти</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h3 class="footer-title">Категорії</h3>
+          <ul class="footer-links">
+            <li><a href="../../categories/fresh-fish.html">Свіжа риба</a></li>
+            <li><a href="../../categories/seafood.html">Морепродукти</a></li>
+            <li><a href="../../categories/smoked-canned.html">Рибні консерви</a></li>
+            <li><a href="../../categories/frozen-fish.html">В'ялена та сушена риба</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h3 class="footer-title">Контакти</h3>
+          <ul class="footer-contacts">
+            <li>Телефон: +380 44 123 4567</li>
+            <li>Email: info@rybna-karta.ua</li>
+            <li>Адреса: м. Київ, вул. Рибна, 42</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>© 2025 Рибна карта. Всі права захищено.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelector('.mobile-menu-toggle').addEventListener('click', function() {
+      document.getElementById('mobileMenu').classList.toggle('active');
+    });
+
+    const mobileDropdownToggles = document.querySelectorAll('.mobile-dropdown-toggle');
+    mobileDropdownToggles.forEach(toggle => {
+      toggle.addEventListener('click', function(e) {
+        e.preventDefault();
+        this.nextElementSibling.classList.toggle('active');
+      });
+    });
+
+    const dropdowns = document.querySelectorAll('.dropdown');
+    dropdowns.forEach(dropdown => {
+      dropdown.addEventListener('mouseenter', function() {
+        this.querySelector('.dropdown-menu').classList.add('show');
+      });
+      dropdown.addEventListener('mouseleave', function() {
+        this.querySelector('.dropdown-menu').classList.remove('show');
+      });
+    });
+
+    const categoryDropdown = document.querySelector('.category-dropdown');
+    categoryDropdown.addEventListener('mouseenter', function() {
+      this.querySelector('.dropdown-menu').classList.add('show');
+    });
+    categoryDropdown.addEventListener('mouseleave', function() {
+      this.querySelector('.dropdown-menu').classList.remove('show');
+    });
+  </script>
+</body>
+</html>
