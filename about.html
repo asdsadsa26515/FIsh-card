@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Рибна карта - Про нас</title>
+  <link rel="icon" href="images/icon.png" type="image/png">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    .world-map-section {
+    text-align: center;
+    padding: 2rem;
+  }
+  .map-wrapper {
+    position: relative;
+    display: inline-block;
+    max-width: 100%;
+    width: 900px;
+  }
+  .map-image {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+    .about-content {
+      margin-bottom: 2rem;
+
+    }
+    
+    .about-content p {
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+    
+    .company-highlights {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+    
+    .highlight-card {
+      flex: 1 1 300px;
+      background-color: #f8f9fa;
+      border-radius: 8px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
+    }
+    
+    .highlight-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .highlight-card i {
+      color: #0079be;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .highlight-card h3 {
+      margin-bottom: 1rem;
+      color: #333;
+    }
+    
+    .world-map-container {
+      position: relative;
+      margin: 3rem 0;
+      background-color: #000000;
+      padding: 2rem;
+      border-radius: 10px;
+    }
+    
+    .world-map-title {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      color: #0079be;
+    }
+    
+    .world-map {
+      width: 100%;
+      height: 500px;
+      position: relative;
+    }
+    
+    .partners-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    
+    .partner-country {
+      flex: 1 1 200px;
+      text-align: center;
+      padding: 1rem;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    
+    .partner-country img {
+      width: 48px;
+      height: 48px;
+      margin-bottom: 0.5rem;
+    }
+    
+    .partner-country h4 {
+      margin-bottom: 0.5rem;
+      color: #0079be;
+    }
+    
+    .mission-vision {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+    
+    .mission, .vision {
+      flex: 1 1 400px;
+      padding: 2rem;
+      background-color: #f8f9fa;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    
+    .mission h3, .vision h3 {
+      color: #0079be;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+    }
+    
+    .mission h3 i, .vision h3 i {
+      margin-right: 10px;
+    }
+    
+    .company-timeline {
+      margin: 3rem 0;
+    }
+    
+    .timeline-title {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #0079be;
+    }
+    
+    .timeline {
+      position: relative;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .timeline::after {
+      content: '';
+      position: absolute;
+      width: 6px;
+      background-color: #0079be;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -3px;
+    }
+    
+    .timeline-container {
+      padding: 10px 40px;
+      position: relative;
+      background-color: inherit;
+      width: 50%;
+    }
+    
+    .timeline-container::after {
+      content: '';
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      right: -17px;
+      background-color: white;
+      border: 4px solid #0079be;
+      top: 15px;
+      border-radius: 50%;
+      z-index: 1;
+    }
+    
+    .timeline-left {
+      left: 0;
+    }
+    
+    .timeline-right {
+      left: 50%;
+    }
+    
+    .timeline-left::before {
+      content: " ";
+      height: 0;
+      position: absolute;
+      top: 22px;
+      width: 0;
+      z-index: 1;
+      right: 30px;
+      border: medium solid #f8f9fa;
+      border-width: 10px 0 10px 10px;
+      border-color: transparent transparent transparent #f8f9fa;
+    }
+    
+    .timeline-right::before {
+      content: " ";
+      height: 0;
+      position: absolute;
+      top: 22px;
+      width: 0;
+      z-index: 1;
+      left: 30px;
+      border: medium solid #f8f9fa;
+      border-width: 10px 10px 10px 0;
+      border-color: transparent #f8f9fa transparent transparent;
+    }
+    
+    .timeline-right::after {
+      left: -16px;
+    }
+    
+    .timeline-content {
+      padding: 20px 30px;
+      background-color: #f8f9fa;
+      position: relative;
+      border-radius: 6px;
+    }
+    
+    .timeline-year {
+      font-weight: bold;
+      color: #0079be;
+    }
+    
+    @media screen and (max-width: 768px) {
+      .timeline::after {
+        left: 31px;
+      }
+      
+      .timeline-container {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+      }
+      
+      .timeline-container::before {
+        left: 60px;
+        border: medium solid #f8f9fa;
+        border-width: 10px 10px 10px 0;
+        border-color: transparent #f8f9fa transparent transparent;
+      }
+      
+      .timeline-left::after, .timeline-right::after {
+        left: 15px;
+      }
+      
+      .timeline-right {
+        left: 0%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <!-- Same header as index.html -->
+    <div class="container">
+      <!-- Top header -->
+      <div class="top-header">
+        <div class="logo-container">
+          <a href="index.html" class="logo">
+            <div class="logo-icon">
+              <i class="fas fa-fish"></i>
+            </div>
+            <span class="logo-text">Рибна карта</span>
+          </a>
+          
+          <nav class="desktop-nav">
+            <ul class="menu-list">
+              <li><a href="about.html" class="active">Про нас</a></li>
+              <li class="dropdown">
+                <a href="products.html" class="dropdown-toggle">Продукти <i class="fas fa-chevron-down"></i></a>
+                <div class="dropdown-menu">
+                  <a href="products.html">Каталог продукції</a>
+                  <a href="popular.html">Популярні товари</a>
+                  <a href="categories/wholesale.html">Оптова торгівля</a>
+                </div>
+              </li>
+              <li><a href="news.html">Новини / Блог</a></li>
+              <li><a href="contacts.html">Контакти</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <!-- Search bar -->
+        <div class="search-container">
+          <input type="text" placeholder="Пошук товарів..." class="search-input">
+          <button class="search-button">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+
+        <!-- Right side icons -->
+        <div class="header-icons">
+          <a href="#" class="cart-button">
+            <i class="fas fa-shopping-cart"></i>
+          </a>
+          <button class="mobile-menu-toggle">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Main navigation -->
+      <nav class="main-nav">
+        <div class="category-dropdown">
+          <button class="dropdown-toggle">
+            Каталог продукції <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="dropdown-menu">
+            <a href="categories/fresh-fish.html"><i class="fas fa-fish"></i> Свіжа риба</a>
+            <a href="categories/seafood.html"><i class="fas fa-ship"></i> Морепродукти</a>
+            <a href="categories/smoked-canned.html"><i class="fas fa-box"></i> Копченості та консерви</a>
+            <a href="categories/frozen-fish.html"><i class="fas fa-snowflake"></i> Заморожена риба</a>
+            <a href="categories/delicacies.html"><i class="fas fa-wine-glass"></i> Делікатеси</a>
+            <a href="categories/wholesale.html"><i class="fas fa-users"></i> Оптова торгівля</a>
+          </div>
+        </div>
+        <a href="popular.html">Популярні товари</a>
+        <a href="categories/wholesale.html">Оптова торгівля</a>
+        <a href="about.html" class="active">Коротко про компанію "Рибна карта"</a>
+      </nav>
+      
+      <!-- Mobile menu (same as index.html) -->
+      <div class="mobile-menu" id="mobileMenu">
+        <!-- Same mobile menu content -->
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container page-content">
+      <h1 class="page-title">Про компанію "Рибна карта"</h1>
+      
+      <div class="about-content">
+        <p>
+          Ласкаво просимо до "Рибної карти" – міжнародної компанії, що займається дистрибуцією та продажем 
+          риби та морепродуктів з усього світу!
+        </p>
+        <p>
+          Заснована досвідченими фахівцями галузі, "Рибна карта" спеціалізується на постачанні відбірної продукції 
+          з найчистіших водойм Скандинавії, Тихого океану, Атлантики та інших регіонів. Ми пишаємося тим, 
+          що забезпечуємо наших клієнтів найсвіжішими морепродуктами високої якості.
+        </p>
+        <p>
+          Наша розгалужена мережа представництв у різних країнах дозволяє нам оперативно реагувати на запити 
+          клієнтів та підтримувати високий рівень сервісу незалежно від географії постачання.
+        </p>
+      </div>
+      
+      <div class="company-highlights">
+        <div class="highlight-card">
+          <i class="fas fa-fish"></i>
+          <h3>Основна діяльність</h3>
+          <ul>
+            <li>Закупівля, імпорт та дистрибуція риби та морепродуктів</li>
+            <li>Співпраця з риболовецькими господарствами та виробниками</li>
+            <li>Логістика та постачання продукції у ресторани, супермаркети та підприємства харчової промисловості</li>
+          </ul>
+        </div>
+        
+        <div class="highlight-card">
+          <i class="fas fa-bullseye"></i>
+          <h3>Пріоритетні напрямки</h3>
+          <ul>
+            <li>Дистрибуція риби та морепродуктів</li>
+            <li>Розвиток партнерських відносин із глобальними постачальниками</li>
+            <li>Впровадження сучасних технологій зберігання та транспортування</li>
+          </ul>
+        </div>
+        
+        <div class="highlight-card">
+          <i class="fas fa-award"></i>
+          <h3>Наші переваги</h3>
+          <ul>
+            <li>Гарантована висока якість продукції</li>
+            <li>Власна логістична мережа</li>
+            <li>Індивідуальний підхід до кожного клієнта</li>
+            <li>Відповідність міжнародним стандартам якості</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="mission-vision">
+        <div class="mission">
+          <h3><i class="fas fa-compass"></i> Наша місія</h3>
+          <p>Забезпечувати найсвіжішими та найякіснішими морепродуктами клієнтів по всьому світу, поважаючи навколишнє середовище та підтримуючи сталі методи рибальства.</p>
+          <p>Ми прагнемо зробити преміальні морепродукти доступними для кожного, зберігаючи при цьому найвищі стандарти якості та свіжості.</p>
+        </div>
+        
+        <div class="vision">
+          <h3><i class="fas fa-eye"></i> Наше бачення</h3>
+          <p>Стати провідним глобальним постачальником морепродуктів, відомим своєю надійністю, якістю та інноваційним підходом до дистрибуції.</p>
+          <p>Ми бачимо майбутнє, де сталі практики рибальства стануть стандартом, а споживачі матимуть доступ до найсвіжіших морепродуктів незалежно від географічного розташування.</p>
+        </div>
+      </div>
+      
+      <section class="world-map-section">
+  <h2 class="timeline-title">Ми співпрацюємо з країнами по всьому світу</h2>
+  <div class="map-wrapper">
+    <img src="images/world-map.svg" alt="Карта світу" class="map-image">
+    </div>
+</section>
+        
+        <div class="partners-list">
+          <div class="partner-country">
+            <i class="fas fa-globe-europe fa-2x" style="color: #43b0f1;"></i>
+            <h4>Україна</h4>
+            <p>Головний офіс та центр дистрибуції</p>
+          </div>
+          
+          <div class="partner-country">
+            <i class="fas fa-globe-europe fa-2x" style="color: #057dcd;"></i>
+            <h4>Норвегія</h4>
+            <p>Постачання лосося та форелі</p>
+          </div>
+          
+          <div class="partner-country">
+            <i class="fas fa-globe-europe fa-2x" style="color: #0099FF;"></i>
+            <h4>Ісландія</h4>
+            <p>Постачання тріски та палтуса</p>
+          </div>
+          
+          <div class="partner-country">
+            <i class="fas fa-globe-americas fa-2x" style="color: #057dcd;"></i>
+            <h4>Канада</h4>
+            <p>Постачання лосося та омарів</p>
+          </div>
+          
+          <div class="partner-country">
+            <i class="fas fa-globe-americas fa-2x" style="color: #0066FF;"></i>
+            <h4>США</h4>
+            <p>Постачання тунця та краба</p>
+          </div>
+          
+          <div class="partner-country">
+            <i class="fas fa-globe-asia fa-2x" style="color: #43b0f1;"></i>
+            <h4>Японія</h4>
+            <p>Постачання креветок та устриць</p>
+          </div>
+          
+          <div class="partner-country">
+            <i class="fas fa-globe-europe fa-2x" style="color: #0099FF;"></i>
+            <h4>Іспанія</h4>
+            <p>Постачання мідій та інших морепродуктів</p>
+          </div>
+          
+          <div class="partner-country">
+            <i class="fas fa-globe-europe fa-2x" style="color: #057dcd;"></i>
+            <h4>Нідерланди</h4>
+            <p>Європейський логістичний центр</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="company-timeline">
+        <h2 class="timeline-title">Історія розвитку компанії</h2>
+        <div class="timeline">
+          <div class="timeline-container timeline-left">
+            <div class="timeline-content">
+              <div class="timeline-year">2010</div>
+              <h3>Заснування компанії</h3>
+              <p>Заснування "Рибної карти" в Україні та відкриття першого офісу в Києві.</p>
+            </div>
+          </div>
+          
+          <div class="timeline-container timeline-right">
+            <div class="timeline-content">
+              <div class="timeline-year">2012</div>
+              <h3>Вихід на європейський ринок</h3>
+              <p>Відкриття представництва в Норвегії та початок активної співпраці з скандинавськими постачальниками.</p>
+            </div>
+          </div>
+          
+          <div class="timeline-container timeline-left">
+            <div class="timeline-content">
+              <div class="timeline-year">2015</div>
+              <h3>Розширення асортименту</h3>
+              <p>Включення делікатесних та преміальних морепродуктів до асортименту компанії.</p>
+            </div>
+          </div>
+          
+          <div class="timeline-container timeline-right">
+            <div class="timeline-content">
+              <div class="timeline-year">2018</div>
+              <h3>Вихід на ринки Північної Америки</h3>
+              <p>Відкриття представництв у Канаді та США, налагодження прямих поставок з місцевими постачальниками.</p>
+            </div>
+          </div>
+          
+          <div class="timeline-container timeline-left">
+            <div class="timeline-content">
+              <div class="timeline-year">2020</div>
+              <h3>Вихід на ринки Азії</h3>
+              <p>Відкриття представництва в Японії та початок поставок екзотичних морепродуктів.</p>
+            </div>
+          </div>
+          
+          <div class="timeline-container timeline-right">
+            <div class="timeline-content">
+              <div class="timeline-year">2023</div>
+              <h3>Впровадження інноваційних технологій</h3>
+              <p>Модернізація логістичної системи та впровадження технологій контролю якості на всіх етапах постачання.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <!-- Same footer as index.html -->
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-column">
+          <h3 class="footer-title">Рибна карта</h3>
+          <p class="footer-text">
+            Найкращі рибні продукти та морепродукти від перевірених постачальників.
+          </p>
+        </div>
+        
+        <div class="footer-column">
+          <h3 class="footer-title">Інформація</h3>
+          <ul class="footer-links">
+            <li><a href="about.html">Про компанію</a></li>
+            <li><a href="payment-delivery.html">Доставка і оплата</a></li>
+            <li><a href="categories/wholesale.html">Оптова торгівля</a></li>
+            <li><a href="contacts.html">Контакти</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h3 class="footer-title">Категорії</h3>
+          <ul class="footer-links">
+            <li><a href="categories/fresh-fish.html">Свіжа риба</a></li>
+            <li><a href="categories/seafood.html">Морепродукти</a></li>
+            <li><a href="categories/smoked-canned.html">Рибні консерви</a></li>
+            <li><a href="categories/frozen-fish.html">В'ялена та сушена риба</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h3 class="footer-title">Контакти</h3>
+          <ul class="footer-contacts">
+            <li>Телефон: +380 44 123 4567</li>
+            <li>Email: info@rybna-karta.ua</li>
+            <li>Адреса: м. Київ, вул. Рибна, 42</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>© 2025 Рибна карта. Всі права захищено.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Same JavaScript as index.html
+    document.querySelector('.mobile-menu-toggle').addEventListener('click', function() {
+      document.getElementById('mobileMenu').classList.toggle('active');
+    });
+
+    const mobileDropdownToggles = document.querySelectorAll('.mobile-dropdown-toggle');
+    mobileDropdownToggles.forEach(toggle => {
+      toggle.addEventListener('click', function(e) {
+        e.preventDefault();
+        this.nextElementSibling.classList.toggle('active');
+      });
+    });
+
+    const dropdowns = document.querySelectorAll('.dropdown');
+    dropdowns.forEach(dropdown => {
+      dropdown.addEventListener('mouseenter', function() {
+        this.querySelector('.dropdown-menu').classList.add('show');
+      });
+      dropdown.addEventListener('mouseleave', function() {
+        this.querySelector('.dropdown-menu').classList.remove('show');
+      });
+    });
+
+    const categoryDropdown = document.querySelector('.category-dropdown');
+    categoryDropdown.addEventListener('mouseenter', function() {
+      this.querySelector('.dropdown-menu').classList.add('show');
+    });
+    categoryDropdown.addEventListener('mouseleave', function() {
+      this.querySelector('.dropdown-menu').classList.remove('show');
+    });
+  </script>
+</body>
+</html>

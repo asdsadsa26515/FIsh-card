@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Пропозиції для ресторанів - Рибна карта</title>
+  <link rel="icon" href="images/icon.png" type="image/png">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    .restaurant-content {
+      margin-bottom: 2rem;
+    }
+    
+    .restaurant-content p {
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+    
+    .offers-section {
+      margin: 3rem 0;
+    }
+    
+    .offers-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    
+    .offer-card {
+      background-color: #f8f9fa;
+      border-radius: 10px;
+      padding: 1.5rem;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .offer-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    
+    .offer-icon {
+      font-size: 2.5rem;
+      color: #0079be;
+      margin-bottom: 1rem;
+    }
+    
+    .offer-title {
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+      color: #333;
+    }
+    
+    .offer-description {
+      flex-grow: 1;
+      margin-bottom: 1rem;
+    }
+    
+    .cta-button {
+      display: inline-block;
+      background-color: #0079be;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+      text-align: center;
+      margin-top: auto;
+    }
+    
+    .cta-button:hover {
+      background-color: #005d91;
+    }
+    
+    .process-section {
+      margin: 4rem 0;
+    }
+    
+    .process-steps {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-top: 2rem;
+    }
+    
+    .process-step {
+      flex: 1 1 300px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 1.5rem;
+      position: relative;
+    }
+    
+    .step-number {
+      width: 60px;
+      height: 60px;
+      background-color: #0079be;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+    
+    .step-title {
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+      color: #333;
+    }
+    
+    .process-step:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      top: 30px;
+      right: -30px;
+      width: 60px;
+      height: 2px;
+      background-color: #e0e0e0;
+    }
+    
+    .testimonials-section {
+      margin: 4rem 0;
+      background-color: #f8f9fa;
+      padding: 3rem 0;
+      border-radius: 10px;
+    }
+    
+    .testimonials-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    
+    .testimonial-card {
+      flex: 1 1 300px;
+      background-color: white;
+      border-radius: 10px;
+      padding: 2rem;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+    }
+    
+    .testimonial-text {
+      font-style: italic;
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+    
+    .testimonial-text::before,
+    .testimonial-text::after {
+      content: '"';
+      font-size: 2rem;
+      color: #0079be;
+      position: absolute;
+    }
+    
+    .testimonial-text::before {
+      top: -15px;
+      left: -10px;
+    }
+    
+    .testimonial-text::after {
+      bottom: -25px;
+      right: -10px;
+    }
+    
+    .testimonial-author {
+      font-weight: 600;
+      color: #333;
+    }
+    
+    .testimonial-position {
+      color: #666;
+      font-size: 0.9rem;
+    }
+    
+    .cta-section {
+      margin: 4rem 0;
+      text-align: center;
+      background-color: #0079be;
+      color: white;
+      padding: 3rem;
+      border-radius: 10px;
+    }
+    
+    .cta-title {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    
+    .cta-description {
+      margin-bottom: 2rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .cta-button-white {
+      display: inline-block;
+      background-color: white;
+      color: #0079be;
+      padding: 1rem 2rem;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+    
+    .cta-button-white:hover {
+      background-color: #f0f0f0;
+      transform: translateY(-3px);
+    }
+    
+    .special-offers {
+      margin: 4rem 0;
+    }
+    
+    .special-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    
+    .special-card {
+      border: 2px solid #0079be;
+      border-radius: 10px;
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .special-tag {
+      position: absolute;
+      top: 0;
+      right: 0;
+      background-color: #0079be;
+      color: white;
+      padding: 0.5rem 1rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      border-bottom-left-radius: 10px;
+    }
+    
+    .special-title {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: #0079be;
+    }
+    
+    .special-price {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #333;
+      margin-bottom: 1rem;
+    }
+    
+    .special-description {
+      margin-bottom: 1.5rem;
+    }
+    
+    .special-features {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 1.5rem;
+    }
+    
+    .special-features li {
+      position: relative;
+      padding-left: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .special-features li::before {
+      content: '\f00c';
+      font-family: 'Font Awesome 5 Free';
+      font-weight: 900;
+      color: #0079be;
+      position: absolute;
+      left: 0;
+    }
+    
+    @media (max-width: 768px) {
+      .process-step:not(:last-child)::after {
+        display: none;
+      }
+      
+      .special-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <!-- Top header -->
+      <div class="top-header">
+        <div class="logo-container">
+          <a href="index.html" class="logo">
+            <div class="logo-icon">
+              <i class="fas fa-fish"></i>
+            </div>
+            <span class="logo-text">Рибна карта</span>
+          </a>
+          
+          <nav class="desktop-nav">
+            <ul class="menu-list">
+              <li><a href="about.html">Про нас</a></li>
+              <li class="dropdown">
+                <a href="products.html" class="dropdown-toggle">Продукти <i class="fas fa-chevron-down"></i></a>
+                <div class="dropdown-menu">
+                  <a href="products.html">Каталог продукції</a>
+                  <a href="popular.html">Популярні товари</a>
+                  <a href="categories/wholesale.html">Оптова торгівля</a>
+                </div>
+              </li>
+              <li><a href="news.html">Новини / Блог</a></li>
+              <li><a href="contacts.html">Контакти</a></li>
+              <li><a href="restaurant-offers.html" class="active">Для ресторанів</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <!-- Search bar -->
+        <div class="search-container">
+          <input type="text" placeholder="Пошук товарів..." class="search-input">
+          <button class="search-button">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+
+        <!-- Right side icons -->
+        <div class="header-icons">
+          <a href="#" class="cart-button">
+            <i class="fas fa-shopping-cart"></i>
+          </a>
+          <button class="mobile-menu-toggle">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Main navigation -->
+      <nav class="main-nav">
+        <div class="category-dropdown">
+          <button class="dropdown-toggle">
+            Каталог продукції <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="dropdown-menu">
+            <a href="categories/fresh-fish.html"><i class="fas fa-fish"></i> Свіжа риба</a>
+            <a href="categories/seafood.html"><i class="fas fa-ship"></i> Морепродукти</a>
+            <a href="categories/smoked-canned.html"><i class="fas fa-box"></i> Копченості та консерви</a>
+            <a href="categories/frozen-fish.html"><i class="fas fa-snowflake"></i> Заморожена риба</a>
+            <a href="categories/delicacies.html"><i class="fas fa-wine-glass"></i> Делікатеси</a>
+            <a href="categories/wholesale.html"><i class="fas fa-users"></i> Оптова торгівля</a>
+          </div>
+        </div>
+        <a href="popular.html">Популярні товари</a>
+        <a href="categories/wholesale.html">Оптова торгівля</a>
+        <a href="restaurant-offers.html" class="active">Пропозиції для ресторанів</a>
+      </nav>
+      
+      <!-- Mobile menu -->
+      <div class="mobile-menu" id="mobileMenu">
+        <!-- Mobile menu content -->
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container page-content">
+      <h1 class="page-title">Пропозиції для ресторанів</h1>
+      
+      <div class="restaurant-content">
+        <p>
+          Компанія "Рибна карта" - ваш надійний партнер у постачанні найсвіжішої та найякіснішої риби 
+          та морепродуктів для вашого ресторану. Маючи представництва по всьому світу та прямі контакти з 
+          рибними господарствами, ми гарантуємо високу якість, свіжість та конкурентні ціни для всіх наших партнерів.
+        </p>
+        <p>
+          Ми розуміємо, що для успішного ресторанного бізнесу критично важливо мати стабільні поставки 
+          найсвіжіших інгредієнтів. Саме тому ми розробили спеціальні пропозиції для ресторанів, 
+          які включають гнучкі умови співпраці, індивідуальний підхід та додаткові послуги.
+        </p>
+      </div>
+      
+      <div class="offers-section">
+        <h2 class="section-title">Наші пропозиції для ресторанів</h2>
+        <div class="offers-grid">
+          <div class="offer-card">
+            <div class="offer-icon">
+              <i class="fas fa-truck"></i>
+            </div>
+            <h3 class="offer-title">Регулярні поставки</h3>
+            <div class="offer-description">
+              <p>Організація регулярних поставок свіжої продукції відповідно до ваших потреб. Графік поставок розробляється індивідуально для кожного партнера.</p>
+            </div>
+            <a href="#contact" class="cta-button">Дізнатися більше</a>
+          </div>
+          
+          <div class="offer-card">
+            <div class="offer-icon">
+              <i class="fas fa-fish"></i>
+            </div>
+            <h3 class="offer-title">Преміальний продукт</h3>
+            <div class="offer-description">
+              <p>Доступ до екслюзивних видів риби та морепродуктів найвищої якості. Унікальні делікатеси для вашого меню прямо від виробників.</p>
+            </div>
+            <a href="#contact" class="cta-button">Дізнатися більше</a>
+          </div>
+          
+          <div class="offer-card">
+            <div class="offer-icon">
+              <i class="fas fa-percentage"></i>
+            </div>
+            <h3 class="offer-title">Гнучка система знижок</h3>
+            <div class="offer-description">
+              <p>Індивідуальна система знижок залежно від обсягів замовлень. Спеціальні пропозиції для постійних клієнтів та партнерів.</p>
+            </div>
+            <a href="#contact" class="cta-button">Дізнатися більше</a>
+          </div>
+          
+          <div class="offer-card">
+            <div class="offer-icon">
+              <i class="fas fa-clipboard-check"></i>
+            </div>
+            <h3 class="offer-title">Контроль якості</h3>
+            <div class="offer-description">
+              <p>Гарантія якості та свіжості кожного продукту. Всі наші товари проходять строгий контроль якості на всіх етапах доставки.</p>
+            </div>
+            <a href="#contact" class="cta-button">Дізнатися більше</a>
+          </div>
+          
+          <div class="offer-card">
+            <div class="offer-icon">
+              <i class="fas fa-utensils"></i>
+            </div>
+            <h3 class="offer-title">Консультації шеф-кухарів</h3>
+            <div class="offer-description">
+              <p>Наші експерти допоможуть вам обрати найкращі продукти для вашого меню та поділяться унікальними рецептами і рекомендаціями.</p>
+            </div>
+            <a href="#contact" class="cta-button">Дізнатися більше</a>
+          </div>
+          
+          <div class="offer-card">
+            <div class="offer-icon">
+              <i class="fas fa-seedling"></i>
+            </div>
+            <h3 class="offer-title">Екологічна відповідальність</h3>
+            <div class="offer-description">
+              <p>Партнерство із сталими джерелами постачання. Ми підтримуємо екологічно відповідальне рибальство і аквакультуру.</p>
+            </div>
+            <a href="#contact" class="cta-button">Дізнатися більше</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="process-section">
+        <h2 class="section-title">Як починається співпраця</h2>
+        <div class="process-steps">
+          <div class="process-step">
+            <div class="step-number">1</div>
+            <h3 class="step-title">Заявка</h3>
+            <p>Заповніть форму заявки на нашому сайті або зв'яжіться з нами по телефону</p>
+          </div>
+          
+          <div class="process-step">
+            <div class="step-number">2</div>
+            <h3 class="step-title">Консультація</h3>
+            <p>Наш менеджер зв'яжеться з вами для обговорення деталей співпраці</p>
+          </div>
+          
+          <div class="process-step">
+            <div class="step-number">3</div>
+            <h3 class="step-title">Пробна поставка</h3>
+            <p>Організуємо пробну поставку для оцінки якості нашої продукції</p>
+          </div>
+          
+          <div class="process-step">
+            <div class="step-number">4</div>
+            <h3 class="step-title">Контракт</h3>
+            <p>Підписання договору з урахуванням ваших потреб та побажань</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="special-offers">
+        <h2 class="section-title">Спеціальні пропозиції для ресторанів</h2>
+        <div class="special-grid">
+          <div class="special-card">
+            <div class="special-tag">Популярне</div>
+            <h3 class="special-title">Стартовий пакет</h3>
+            <div class="special-price">від 10 000 грн</div>
+            <div class="special-description">
+              <p>Ідеальне рішення для нових партнерів, які хочуть почати співпрацю з нами.</p>
+            </div>
+            <ul class="special-features">
+              <li>Знижка 10% на перше замовлення</li>
+              <li>Безкоштовна доставка</li>
+              <li>Консультація шеф-кухара</li>
+              <li>Гнучкий графік поставок</li>
+            </ul>
+            <a href="#contact" class="cta-button">Замовити пропозицію</a>
+          </div>
+          
+          <div class="special-card">
+            <div class="special-tag">Оптимальний</div>
+            <h3 class="special-title">Стабільний партнер</h3>
+            <div class="special-price">від 25 000 грн/місяць</div>
+            <div class="special-description">
+              <p>Регулярні поставки для ресторанів з середнім обсягом замовлень.</p>
+            </div>
+            <ul class="special-features">
+              <li>Постійна знижка 15%</li>
+              <li>Пріоритетна доставка</li>
+              <li>Персональний менеджер</li>
+              <li>Доступ до преміальних продуктів</li>
+              <li>Щомісячні акції</li>
+            </ul>
+            <a href="#contact" class="cta-button">Замовити пропозицію</a>
+          </div>
+          
+          <div class="special-card">
+            <div class="special-tag">Преміум</div>
+            <h3 class="special-title">VIP партнерство</h3>
+            <div class="special-price">від 50 000 грн/місяць</div>
+            <div class="special-description">
+              <p>Комплексне обслуговування для мережевих ресторанів та преміум-сегменту.</p>
+            </div>
+            <ul class="special-features">
+              <li>Індивідуальна система знижок до 25%</li>
+              <li>Цілодобова доставка</li>
+              <li>Спеціальні умови оплати</li>
+              <li>Доступ до рідкісних делікатесів</li>
+              <li>Навчання персоналу</li>
+              <li>Маркетингова підтримка</li>
+            </ul>
+            <a href="#contact" class="cta-button">Замовити пропозицію</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="testimonials-section">
+        <h2 class="section-title">Відгуки наших партнерів</h2>
+        <div class="testimonials-container">
+          <div class="testimonial-card">
+            <div class="testimonial-text">
+              <p>Співпрацюємо з "Рибною картою" вже 3 роки. Завжди свіжа продукція, вчасні поставки та індивідуальний підхід. Особливо цінуємо доступ до рідкісних делікатесів, які складно знайти на українському ринку.</p>
+            </div>
+            <div class="testimonial-author">Олег Савченко</div>
+            <div class="testimonial-position">Шеф-кухар, ресторан "Морський бриз"</div>
+          </div>
+          
+          <div class="testimonial-card">
+            <div class="testimonial-text">
+              <p>Наша мережа ресторанів обрала "Рибну карту" як основного постачальника морепродуктів. Ціни конкурентні, якість стабільно висока, а головне - представники компанії завжди йдуть назустріч і враховують наші побажання.</p>
+            </div>
+            <div class="testimonial-author">Марина Ковальчук</div>
+            <div class="testimonial-position">Директор із закупівель, мережа "Смачний кут"</div>
+          </div>
+          
+          <div class="testimonial-card">
+            <div class="testimonial-text">
+              <p>Працюючи з "Рибною картою", ми отримали доступ до преміальних морепродуктів, які стали візитівкою нашого ресторану. Консультації їхніх експертів допомогли нам розробити унікальне меню, яке приваблює нових клієнтів.</p>
+            </div>
+            <div class="testimonial-author">Ігор Мельник</div>
+            <div class="testimonial-position">Власник, ресторан "Перлина моря"</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="cta-section" id="contact">
+        <h2 class="cta-title">Готові розпочати співпрацю?</h2>
+        <p class="cta-description">
+          Заповніть форму запиту або зв'яжіться з нашим відділом по роботі з ресторанами. 
+          Ми розробимо індивідуальну пропозицію, що враховує всі особливості вашого закладу.
+        </p>
+        <a href="contacts.html" class="cta-button-white">Зв'язатися з нами</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-column">
+          <h3 class="footer-title">Рибна карта</h3>
+          <p class="footer-text">
+            Найкращі рибні продукти та морепродукти від перевірених постачальників.
+          </p>
+        </div>
+        
+        <div class="footer-column">
+          <h3 class="footer-title">Інформація</h3>
+          <ul class="footer-links">
+            <li><a href="about.html">Про компанію</a></li>
+            <li><a href="payment-delivery.html">Доставка і оплата</a></li>
+            <li><a href="categories/wholesale.html">Оптова торгівля</a></li>
+            <li><a href="restaurant-offers.html">Для ресторанів</a></li>
+            <li><a href="contacts.html">Контакти</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h3 class="footer-title">Категорії</h3>
+          <ul class="footer-links">
+            <li><a href="categories/fresh-fish.html">Свіжа риба</a></li>
+            <li><a href="categories/seafood.html">Морепродукти</a></li>
+            <li><a href="categories/smoked-canned.html">Рибні консерви</a></li>
+            <li><a href="categories/frozen-fish.html">В'ялена та сушена риба</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h3 class="footer-title">Контакти</h3>
+          <ul class="footer-contacts">
+            <li>Телефон: +380 44 123 4567</li>
+            <li>Email: info@rybna-karta.ua</li>
+            <li>Адреса: м. Київ, вул. Рибна, 42</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>© 2025 Рибна карта. Всі права захищено.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // JavaScript для мобільного меню та випадаючих списків
+    document.querySelector('.mobile-menu-toggle').addEventListener('click', function() {
+      document.getElementById('mobileMenu').classList.toggle('active');
+    });
+
+    const mobileDropdownToggles = document.querySelectorAll('.mobile-dropdown-toggle');
+    mobileDropdownToggles.forEach(toggle => {
+      toggle.addEventListener('click', function(e) {
+        e.preventDefault();
+        this.nextElementSibling.classList.toggle('active');
+      });
+    });
+
+    const dropdowns = document.querySelectorAll('.dropdown');
+    dropdowns.forEach(dropdown => {
+      dropdown.addEventListener('mouseenter', function() {
+        this.querySelector('.dropdown-menu').classList.add('show');
+      });
+      dropdown.addEventListener('mouseleave', function() {
+        this.querySelector('.dropdown-menu').classList.remove('show');
+      });
+    });
+
+    const categoryDropdown = document.querySelector('.category-dropdown');
+    categoryDropdown.addEventListener('mouseenter', function() {
+      this.querySelector('.dropdown-menu').classList.add('show');
+    });
+    categoryDropdown.addEventListener('mouseleave', function() {
+      this.querySelector('.dropdown-menu').classList.remove('show');
+    });
+  </script>
+</body>
+</html>
