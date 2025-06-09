@@ -1,5 +1,4 @@
 
-/* Reset and base styles */
 * {
   margin: 0;
   padding: 0;
@@ -34,7 +33,7 @@ img {
   padding: 0 1rem;
 }
 
-/* Colors */
+
 :root {
   --brand-blue: #0052cc;
   --brand-darkBlue: #0052cc;
@@ -53,7 +52,7 @@ img {
   --warning: #ffab00;
 }
 
-/* Button styles */
+
 .button {
   display: inline-flex;
   align-items: center;
@@ -73,7 +72,7 @@ img {
   background-color: var(--brand-darkBlue);
 }
 
-/* Header */
+
 .header {
   background-color: white;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
@@ -274,7 +273,7 @@ img {
   position: relative;
 }
 
-/* Mobile menu */
+
 .mobile-menu {
   display: none;
   background-color: white;
@@ -331,7 +330,7 @@ img {
   display: block;
 }
 
-/* Hero Banner */
+
 .hero-banner {
   position: relative;
   padding: 2.5rem 0;
@@ -372,7 +371,7 @@ img {
   margin-bottom: 1.5rem;
 }
 
-/* Products Section */
+
 .products-section {
   padding: 2.5rem 0;
 }
@@ -471,7 +470,7 @@ img {
   display: none;
 }
 
-/* Categories Section */
+
 .categories-section {
   padding: 2.5rem 0;
   background-color: var(--gray-100);
@@ -641,7 +640,7 @@ img {
   font-size: 0.875rem;
 }
 
-/* Page specific styles */
+
 .page-content {
   padding: 2rem 0;
 }
@@ -652,7 +651,7 @@ img {
   margin-bottom: 1.5rem;
 }
 
-/* About page */
+
 .about-content {
   max-width: 50rem;
 }
@@ -661,7 +660,7 @@ img {
   margin-bottom: 1rem;
 }
 
-/* Product page */
+
 .breadcrumbs {
   display: flex;
   align-items: center;
@@ -718,12 +717,11 @@ img {
   color: var(--gray-600);
 }
 
-/* Products list page */
 .category-card p {
   display: none;
 }
 
-/* Product details page */
+
 .product-details {
   display: grid;
   gap: 2rem;
@@ -799,7 +797,7 @@ img {
   font-size: 1rem;
 }
 
-/* Contacts page */
+
 .contact-grid {
   display: grid;
   gap: 2rem;
