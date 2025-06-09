@@ -311,12 +311,12 @@
   </footer>
 
   <script>
-    // Mobile menu toggle
+   
     document.querySelector('.mobile-menu-toggle').addEventListener('click', function() {
       document.getElementById('mobileMenu').classList.toggle('active');
     });
 
-    // Mobile dropdown toggles
+   
     const mobileDropdownToggles = document.querySelectorAll('.mobile-dropdown-toggle');
     mobileDropdownToggles.forEach(toggle => {
       toggle.addEventListener('click', function(e) {
@@ -325,7 +325,7 @@
       });
     });
 
-    // Desktop dropdown behavior
+  
     const dropdowns = document.querySelectorAll('.dropdown');
     dropdowns.forEach(dropdown => {
       dropdown.addEventListener('mouseenter', function() {
@@ -336,7 +336,7 @@
       });
     });
 
-    // Category dropdown behavior
+   
     const categoryDropdown = document.querySelector('.category-dropdown');
     categoryDropdown.addEventListener('mouseenter', function() {
       this.querySelector('.dropdown-menu').classList.add('show');
